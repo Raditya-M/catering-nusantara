@@ -9,9 +9,6 @@ Website pemesanan catering modern yang dibangun menggunakan **Laravel 12**, **Ta
 - 🔍 Filter menu
 - 🛒 Pemesanan makanan
 - ❤️ Wishlist
-- 👤 Halaman Profil
-- 📱 Responsive Design
-- ⚡ Fast Loading dengan Vite
 
 ## 🛠️ Tech Stack
 
