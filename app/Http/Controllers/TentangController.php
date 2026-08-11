@@ -2,24 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class TentangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $menus = Menu::where('aktif', true)->latest()->take(4)->get();
-
-        return view('home', compact('menus'));
-    }
-
-    public function login()
-    {
-        return view('auth.login');
+        return view('tentang');
     }
 
     /**
