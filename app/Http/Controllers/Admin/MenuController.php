@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,7 +13,9 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::latest()->get();
-        return view('admin.menus.index', compact('menus'));
+        $testimonis = Testimoni::latest()->get();
+
+        return view('admin.menus.index', compact('menus', 'testimonis'));
     }
 
     public function featured()
@@ -71,6 +74,7 @@ class MenuController extends Controller
     {
         $validated = $request->validate([
             'nama'      => 'required|string|max:255',
+            'paket' => 'required|in:silver,gold,premium',
             'deskripsi' => 'nullable|string',
             'harga'     => 'required|numeric|min:0',
             'gambar'    => 'nullable|image|max:2048',

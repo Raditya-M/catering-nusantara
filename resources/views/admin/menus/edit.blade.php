@@ -18,6 +18,16 @@
         </div>
 
         <div>
+            <label class="block text-sm font-medium text-stone-700 mb-1">Paket</label>
+            <select name="paket" class="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm">
+                <option value="silver" {{ old('paket', $menu->paket ?? '') == 'silver' ? 'selected' : '' }}>Silver</option>
+                <option value="gold" {{ old('paket', $menu->paket ?? '') == 'gold' ? 'selected' : '' }}>Gold</option>
+                <option value="premium" {{ old('paket', $menu->paket ?? '') == 'premium' ? 'selected' : '' }}>Premium</option>
+            </select>
+            @error('paket') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+        </div>
+
+        <div>
             <label class="block text-sm font-medium text-stone-700 mb-1">Deskripsi</label>
             <textarea name="deskripsi" rows="4"
                       placeholder="Ceritain sedikit tentang menu ini, bahan-bahannya, cocok buat acara apa, dsb."

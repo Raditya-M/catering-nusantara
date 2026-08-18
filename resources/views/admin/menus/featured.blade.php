@@ -3,7 +3,7 @@
 @section('title', 'Menu Andalan')
 
 @section('content')
-<section class="max-w-4xl mx-auto px-6 py-10">
+<section class="max-w-4xl mx-auto px-6 py-10 mt-15">
 
     <div class="flex items-center justify-between mb-2">
         <h1 class="text-2xl font-bold text-stone-900">Pilih Menu Andalan</h1>

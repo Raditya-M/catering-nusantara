@@ -3,7 +3,7 @@
 @section('title', 'Tambah Menu')
 
 @section('content')
-<section class="max-w-xl mx-auto px-6 py-10">
+<section class="max-w-xl mx-auto px-6 py-10 mt-15">
     <h1 class="text-2xl font-bold text-stone-900 mb-6">Tambah Menu</h1>
 
     <form action="{{ route('admin.menus.store') }}" method="POST" enctype="multipart/form-data" class="space-y-5">
@@ -14,6 +14,16 @@
             <input type="text" name="nama" value="{{ old('nama') }}"
                    class="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm">
             @error('nama') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-stone-700 mb-1">Paket</label>
+            <select name="paket" class="w-full border border-stone-300 rounded-lg px-4 py-2.5 text-sm">
+                <option value="silver" {{ old('paket', $menu->paket ?? '') == 'silver' ? 'selected' : '' }}>Silver</option>
+                <option value="gold" {{ old('paket', $menu->paket ?? '') == 'gold' ? 'selected' : '' }}>Gold</option>
+                <option value="premium" {{ old('paket', $menu->paket ?? '') == 'premium' ? 'selected' : '' }}>Premium</option>
+            </select>
+            @error('paket') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
         </div>
 
         <div>

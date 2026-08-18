@@ -2,26 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
-use App\Models\Testimoni;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class KontakController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $menus = Menu::where('aktif', true)->latest()->take(4)->get();
-        $testimonisHome = Testimoni::where('tampil_home', true)->latest()->take(3)->get();
-
-        return view('home', compact('menus', 'testimonisHome'));
-    }
-
-    public function login()
-    {
-        return view('auth.login');
+        return view('kontak');
     }
 
     /**

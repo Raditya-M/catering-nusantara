@@ -29,7 +29,7 @@
             </a>
 
             <div class="max-w-sm w-full mx-auto lg:mx-0">
-                <p class="text-orange-500 font-semibold text-sm mb-2">Selamat Datang Kembali!</p>
+                <p class="text-orange-500 font-semibold text-sm mb-2">Selamat Datang Admin!</p>
                 <h1 class="text-3xl font-extrabold text-stone-900 mb-8">Masuk ke Akunmu</h1>
 
                 @if (session('status'))
@@ -55,11 +55,6 @@
                     <div>
                         <div class="flex items-center justify-between mb-1.5">
                             <label for="password" class="block text-sm font-medium text-stone-700">Kata Sandi</label>
-                            @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}" class="text-xs text-orange-500 hover:underline">
-                                    Lupa kata sandi?
-                                </a>
-                            @endif
                         </div>
                         <input id="password" type="password" name="password" required
                                placeholder="••••••••"
